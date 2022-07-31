@@ -1,0 +1,21 @@
+[package]
+name = "optogon-starter"
+version = "2.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+druid = { git = "https://github.com/linebender/druid.git" }
+path-clean = "0.1.0"
+
+[profile.release]
+opt-level = "s"
+debug = false
+debug-assertions = false
+overflow-checks = false
+lto = true
+panic = 'abort'
+incremental = false
+codegen-units = 16
+rpath = false
